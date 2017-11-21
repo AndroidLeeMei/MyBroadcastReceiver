@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.auser.mybroadcastreceiver">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--設定廣播的服務,是等一下要建立的類別名稱BoradcastReceiver1-->
+        <receiver android:name=".BroadcastReceiver1">
+        <intent-filter>
+            <!--開機完成時事件…-->
+            <!--<action android:name="android.intent.action.BOOT_COMPLETED"/>-->
+            <!--app安裝完成時的偵測-->
+            <action android:name="android.intent.action.PACKAGE_ADDED"/>
+            <!--app安裝完成時的偵測-->
+            <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <!--設定資料類型為package…一定是小寫的-->
+                <data android:scheme="package"></data>
+            <!--有些事件需要指定資類型-->
+            <!--意圖過濾器,針對特定事件,例如收音機的廣播頻道-->
+        </intent-filter>
+            <intent-filter>
+                <!--偵測自定廣播會有反應-->
+                <action android:name="android.intent.action.CUSTOM_BROADCAST"></action>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
