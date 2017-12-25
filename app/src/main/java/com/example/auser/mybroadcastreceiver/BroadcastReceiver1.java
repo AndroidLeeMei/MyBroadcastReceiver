@@ -17,7 +17,7 @@ public class BroadcastReceiver1 extends BroadcastReceiver {
         //檢查自定廣播會有反應
 //                        <action android:name="android.intent.action.CUSTOM_BROADCAST"></action>…
         if (event.equals("android.intent.action.CUSTOM_BROADCAST"))
-            Toast.makeText(context,"自定廣播被偵測到: "+event,Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,"自定廣播被偵測到1: "+event,Toast.LENGTH_SHORT).show();
         else
         //BroadcastReceiver1e沒有繼承activity的類型,所以Toast裏第一個參數不能填this,會有問題
         Toast.makeText(context,"自定1: "+event,Toast.LENGTH_SHORT).show();
